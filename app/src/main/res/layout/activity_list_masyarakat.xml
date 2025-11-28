@@ -7,8 +7,8 @@
     tools:context=".ListMasyarakatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tampil"
+        android:id="@+id/rtampil"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

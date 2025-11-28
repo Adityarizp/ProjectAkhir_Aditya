@@ -23,7 +23,7 @@ public class ListMasyarakatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_masyarakat);
 
-        recyclerView = findViewById(R.id.rv_tampil);
+        recyclerView = findViewById(R.id.rtampil);
         adapter = new MasyarakatAdapter(this);
 
         dbHelper = new DbHelper(this);

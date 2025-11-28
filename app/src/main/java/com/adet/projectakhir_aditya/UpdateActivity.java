@@ -30,31 +30,15 @@ public class UpdateActivity extends AppCompatActivity {
         btnSimpan = findViewById(R.id.btn_submit);
 
         Intent intent = getIntent();
-        masyarakat = (Masyarakat) intent.getSerializableExtra("data");
+        masyarakat = (Masyarakat) intent.getSerializableExtra("user");
 
-        if (masyarakat != null) {
-            etNIK.setText(masyarakat.getNIK());
-            etNama.setText(masyarakat.getNama());
-        }
+        etNIK.setText(masyarakat.getNIK());
+        etNama.setText(masyarakat.getNama());
 
-        btnSimpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (etNIK.getText().toString().isEmpty()) {
-                    Toast.makeText(UpdateActivity.this, "Error: NIK harus diisi", Toast.LENGTH_SHORT).show();
-                } else if (etNama.getText().toString().isEmpty()) {
-                    Toast.makeText(UpdateActivity.this, "Error: Nama Lengkap harus diisi", Toast.LENGTH_SHORT).show();
-                } else {
-                    dbHelper.updateUser(masyarakat.getId(), etNIK.getText().toString(), etNama.getText().toString());
-                    Toast.makeText(UpdateActivity.this, "Update berhasil!", Toast.LENGTH_SHORT).show();
-
-                    // Kembali ke ListMasyarakatActivity dengan refresh data
-                    Intent intent = new Intent(UpdateActivity.this, ListMasyarakatActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    finish();
-                }
-            }
+        btnSimpan.setOnClickListener((View v) -> {
+            dbHelper.updateUser(masyarakat.getId(), etNIK.getText().toString(), etNama.getText().toString());
+            Toast.makeText(UpdateActivity.this, "Updated berhasil!", Toast.LENGTH_SHORT).show();
+            finish();
         });
     }
 }

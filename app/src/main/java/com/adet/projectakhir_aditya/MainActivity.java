@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (inNIK.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Error: NIK harus diisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error: NIK harus diisi!", Toast.LENGTH_SHORT).show();
                 } else if (inNama.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Error: Nama Lengkap harus diisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error: Nama Lengkap harus diisi!", Toast.LENGTH_SHORT).show();
                 } else {
                     dbHelper.addUserDetail(inNIK.getText().toString(), inNama.getText().toString());
                     inNIK.setText("");
                     inNama.setText("");
-                    Toast.makeText(MainActivity.this, "Simpan berhasil", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Simpan berhasil!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

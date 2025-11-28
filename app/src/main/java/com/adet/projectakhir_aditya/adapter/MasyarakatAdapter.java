@@ -62,7 +62,7 @@ public class MasyarakatAdapter extends RecyclerView.Adapter<MasyarakatAdapter.Ma
     @NonNull
     @Override
     public MasyarakatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_masyarakat, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         return new MasyarakatViewHolder(view);
     }
 
@@ -73,7 +73,7 @@ public class MasyarakatAdapter extends RecyclerView.Adapter<MasyarakatAdapter.Ma
 
         holder.btnUbah.setOnClickListener((View v) -> {
             Intent intent = new Intent(activity, UpdateActivity.class);
-            intent.putExtra("data", (Serializable) listMasyarakat.get(position));
+            intent.putExtra("user", (Serializable) listMasyarakat.get(position));
             activity.startActivity(intent);
         });
 
